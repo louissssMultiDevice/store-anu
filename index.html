@@ -331,6 +331,9 @@
     <strong>Today:</strong> <span id="today-date">Loading...</span>
   </div>
   <div class="info-card">
+    <strong>Digital Clock:</strong> <span id="jamWIB" style="font-size: 20px; font-weight: bold;">Loading...</span>
+  </div>
+  <div class="info-card">
     <strong>Your Battery:</strong> <span id="battery-status">Loading...</span>
   </div>
   <div class="info-card">
@@ -467,6 +470,19 @@
   });
 
   // Region detection
+      function updateJamWIB() {
+    const now = new Date();
+    // Konversi ke WIB (GMT+7)
+    const wib = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+    const jam = String(wib.getUTCHours()).padStart(2, '0');
+    const menit = String(wib.getUTCMinutes()).padStart(2, '0');
+    const detik = String(wib.getUTCSeconds()).padStart(2, '0');
+    document.getElementById('jamWIB').textContent = `WIB: ${jam}:${menit}:${detik}`;
+  }
+
+  setInterval(updateJamWIB, 1000);
+  updateJamWIB();
+    
   const region = Intl.DateTimeFormat().resolvedOptions().locale;
   document.getElementById("user-region").textContent = region;
   
