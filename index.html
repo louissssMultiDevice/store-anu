@@ -66,6 +66,56 @@
   object-fit: cover;
   margin-bottom: 10px;
 }
+
+    .left p {
+      margin: 20px 0;
+      font-size: 16px;
+      color: #ddd;
+    }
+    .typing-text {
+      display: inline;
+      font-weight: bold;
+      color: #00ffe1;
+      border-right: 2px solid #00ffe1;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.7s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .right img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ffe1;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #00ffe1;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00ccc1;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .left, .right {
+        max-width: 100%;
+      }
     .typing {
       color: var(--accent);
       font-weight: bold;
