@@ -181,8 +181,14 @@
     <h1>Fika Store</h1>
     <p class="sub-title">Layanan Hosting & Jasa Digital Terpercaya</p>
   </header>
-  <section class="intro">
-  <h2>Hi! I'm <span style="color: var(--primary);">Handii</span></h2>
+  <div class="left">
+      <h1>Hai, It's Handi</h1>
+      <h2>I'm a <span class="typing-text" id="typed"></span></h2>
+      <p>Saya adalah developer dari website Fika Store dan penyedia jasa digital terpercaya.</p>
+    </div>
+    <div class="right">
+      <img src="logo.png" alt="Logo Fika" />
+    </div>
 <div class="info-section">
   <div class="info-card">
     <strong>Today:</strong> <span id="today-date">Loading...</span>
@@ -195,29 +201,7 @@
   </div>
 </div>
           <section class="keunggulan">
-        <h2>Prosuk Terlaris Kami</h2>
-        </div>
-    <div class="handi">
-      <img src="web.png" alt="website">
-      <h3>Jasa Create Website</h3>
-      <p>Jasa Bikin Website Sesuai Imajinasi Kamu kapan pun kamu butuh, mulai dari Rp 10.000</p>
-    </div>
-            <div class="handi">
-      <img src="hosting.png" alt="Panel Pterodactyl">
-      <h3>Panel Pterodactyl (bot wa)</h3>
-      <p>Jual panel premium mulai dengan Rp 1.000.</p>
-            </div>
-            <div class="handi">
-      <img src="w.png" alt="Nomor Kosong">
-      <h3>Nomor Kosong (Nokos)</h3>
-      <p>Nomor verifikasi siap pakai kapan pun kamu butuh.</p>
-            </div>
-           <div class="handi">
-      <img src="vps.png" alt="VPS">
-      <h3>VPS Hosting</h3>
-      <p>Stabil dan cepat untuk berbagai kebutuhan hosting kamu.</p>
-          </div>
-          </section>
+        
       
   <section class="produk-section">
     <h2>Produk Kami</h2>
@@ -287,35 +271,37 @@
   const region = Intl.DateTimeFormat().resolvedOptions().locale;
   document.getElementById("user-region").textContent = region;
   
-  const words = ["dev", "programmer", "designer"];
-  let part = 0;
-  let i = 0;
-  let isDeleting = false;
-  const typingElement = document.getElementById("typing");
+  const textList = ["Developer Website", "Designer", "Programmer", "Dev Server Mc"];
+    const typed = document.getElementById("typed");
+    let listIndex = 0;
+    let charIndex = 0;
+    let typing = true;
 
-  function typeEffect() {
-    let currentWord = words[part];
-    let typed = isDeleting 
-      ? currentWord.substring(0, i--) 
-      : currentWord.substring(0, i++);
-
-    typingElement.textContent = typed;
-
-    let speed = isDeleting ? 70 : 100;
-
-    if (!isDeleting && i === currentWord.length) {
-      speed = 1200;
-      isDeleting = true;
-    } else if (isDeleting && i === 0) {
-      isDeleting = false;
-      part = (part + 1) % words.length;
-      speed = 200;
+    function typeEffect() {
+      const currentText = textList[listIndex];
+      if (typing) {
+        if (charIndex < currentText.length) {
+          typed.textContent += currentText.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
+        }
+      } else {
+        if (charIndex > 0) {
+          typed.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          listIndex = (listIndex + 1) % textList.length;
+          setTimeout(typeEffect, 500);
+        }
+      }
     }
 
-    setTimeout(typeEffect, speed);
-  }
-
-  typeEffect();
+    typeEffect();
  
     // year update
     document.getElementById("year").textContent = new Date().getFullYear();
