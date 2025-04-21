@@ -213,6 +213,57 @@
       color: var(--accent);
       text-decoration: none;
     }
+      .unggulan-section {
+  padding: 50px 20px;
+  background: #101010;
+  text-align: center;
+}
+
+.unggulan-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 30px;
+}
+
+.unggulan-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.unggulan-card {
+  background-color: #1e1e1e;
+  border: 2px solid var(--accent);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+  transition: all 0.3s ease;
+}
+
+.unggulan-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,255,204,0.4);
+}
+
+.unggulan-card i {
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.unggulan-card h3 {
+  color: var(--primary);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.unggulan-card p {
+  color: #ccc;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
     .info-section {
   display: flex;
   flex-wrap: wrap;
@@ -236,6 +287,30 @@
   text-align: left;
   font-size: 1.1em;
   box-shadow: inset 0 0 5px #0f0, 0 0 5px #0ff;
+}
+      .tentang-section {
+  background-color: #0f0f0f;
+  color: #eee;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.tentang-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.tentang-section h2 {
+  color: var(--primary);
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.tentang-section p {
+  font-size: 1em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
 }
   </style>
 </head>
@@ -262,12 +337,7 @@
     <strong>Your Region:</strong> <span id="user-region">Loading...</span>
   </div>
 </div>
-          <section class="logo">
-          <img src="w.png" alt="nokos"/>
-          <img src="vps.png" alt="vps"/>
-          <img src="bot.png" alt="panel bot" />
-          <img src="web.png" alt="jasa bikin website" />
-          </section>
+          
       
   <section class="produk-section">
     <h2>Produk Kami</h2>
@@ -282,7 +352,23 @@
         <i class="fas fa-mobile-alt"></i>
         <h3>Nokos Premium</h3>
         <p>Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
-        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+        <a href="https://wa.me/6287717274346" class="btn">Pesa<section class="unggulan-section">
+  <h2>Produk Unggulan Kami</h2>
+  <div class="unggulan-grid">
+    <div class="unggulan-card">
+      <i class="fas fa-fire"></i>
+      <h3>Panel Bot WhatsApp</h3>
+      <p>Kelola bot WhatsApp seperti VPS: start, stop, upload bot, dan monitoring.</p>
+      <a href="https://wa.me/6287717274346" class="btn">Lihat Detail</a>
+    </div>
+    <div class="unggulan-card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>VPS Premium R1, C1 - R64, C32</h3>
+      <p>Cocok untuk bot berat & server MC, dengan kecepatan dan uptime maksimal.</p>
+      <a href="https://wa.me/6287717274346" class="btn">Lihat Detail</a>
+    </div>
+  </div>
+        </section>n Sekarang</a>
       </div>
       <div class="produk-card">
         <i class="fas fa-cloud"></i>
@@ -312,10 +398,17 @@
   </section>
 
 
-    <section class="logo">
-    <img src="logo.png" alt="Tentang Kami">
-    <h2>Tentang Fika Store</h2>
-    <p>Fika Store adalah platform digital yang menyediakan layanan lengkap mulai dari pulsa murah, VPS hosting, jasa perbaikan script bot, hingga nomor kosong untuk verifikasi akun. Kami hadir untuk memberikan solusi digital terpercaya dengan harga terbaik dan pelayanan cepat.</p>
+    <section class="tentang-section" id="tentang">
+  <div class="tentang-container">
+    <h2>Tentang Kami</h2>
+    <p>
+      <strong>Fika-Ai | Digital Marketplace</strong> adalah platform digital modern yang menyediakan layanan serba ada, mulai dari <b>panel Pterodactyl, VPS hosting, nomor kosong, jasa setup server MC, install bot WhatsApp</b> hingga <b>edit script bot</b>.
+    </p>
+    <p>
+      Kami hadir untuk mempermudah kamu dalam mengelola berbagai kebutuhan digital, baik untuk keperluan personal, bisnis, maupun komunitas. Dengan sistem otomatis dan dukungan CS 24/7, kami siap bantu kapan pun dibutuhkan.
+    </p>
+    <a href="#produk" class="btn">Lihat Produk</a>
+  </div>
     </section>
   
   <footer>
