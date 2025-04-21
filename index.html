@@ -1,46 +1,295 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fika Store</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fika Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+    <style>
+    :root {
+      --primary: #00e0ff;
+      --accent: #00ff87;
+      --dark: #121212;
+      --light: #f4f4f4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: var(--primary);
+    }
+
+    .sub-title {
+      font-size: 1.1em;
+      color: #bbb;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 30px auto 50px;
+    }
+
+    .intro h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    .typing {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.5em;
+      height: 30px;
+    }
+
+    .produk-section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .produk-section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .produk-card {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 20px rgba(0, 255, 204, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .produk-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+    }
+
+    .produk-card i {
+      font-size: 2.5em;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .produk-card h3 {
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.3em;
+    }
+
+    .produk-card p {
+      color: #ccc;
+      margin: 10px 0 20px;
+      font-size: 0.95em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--primary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.info-card {
+  background: #222;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #fff;
+  min-width: 200px;
+  text-align: left;
+  font-size: 1.1em;
+  box-shadow: inset 0 0 5px #0f0, 0 0 5px #0ff;
+}
+  </style>
 </head>
 <body>
-
-    <header>
-        <img src="logo.png" class="logo" alt="Fila Store Logo">
-        <h1>Fika Store</h1>
-        <p class="sub-title">Hosting & Jasa Digital Murah dan Terpercaya</p>
-    </header>
-
-    <div class="divider"></div>
-
-    <section class="keunggulan">
-        <h2>Keunggulan Kami</h2>
+  <header>
+    <img src="logo.png" class="logo" alt="Fika Store Logo" />
+    <h1>Fika Store</h1>
+    <p class="sub-title">Layanan Hosting & Jasa Digital Terpercaya</p>
+  </header>
+  <section class="intro">
+  <h2>Hi! I'm <span style="color: var(--primary);">Handii</span></h2>
+<div class="info-section">
+  <div class="info-card">
+    <strong>Today:</strong> <span id="today-date">Loading...</span>
+  </div>
+  <div class="info-card">
+    <strong>Your Battery:</strong> <span id="battery-status">Loading...</span>
+  </div>
+  <div class="info-card">
+    <strong>Your Region:</strong> <span id="user-region">Loading...</span>
+  </div>
+</div>
+          <section class="keunggulan">
+        <h2>Prosuk Terlaris Kami</h2>
         <div class="keunggulan-container">
-            <img src="1.png" alt="Keunggulan 1">
-            <img src="2.png" alt="Keunggulan 2">
-            <img src="3.png" alt="Keunggulan 3">
-            <img src="4.png" alt="Keunggulan 4">
+            <img src="1.png" alt="Nokos">
+            <img src="2.png" alt="Vps">
+            <img src="3.png" alt="Panel Bot">
+            <img src="4.png" alt="Jasa Bikin Web">
         </div>
-    </section>
+          </section>
+      
+  <section class="produk-section">
+    <h2>Produk Kami</h2>
+    <div class="produk-grid">
+      <div class="produk-card">
+        <i class="fas fa-server"></i>
+        <h3>Jasa Setup Server</h3>
+        <p>Setup server Minecraft, Bot WhatsApp, dll. Full support & fast respon.</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="produk-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Nokos Premium</h3>
+        <p>Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="produk-card">
+        <i class="fas fa-cloud"></i>
+        <h3>VPS & Hosting</h3>
+        <p>VPS murah, stabil, cocok untuk bot, server game, maupun keperluan dev.</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="produk-card">
+        <i class="fas fa-robot"></i>
+        <h3>Bot WhatsApp</h3>
+        <p>Bot WhatsApp full fitur, anti delay, bisa custom sesuai kebutuhan kamu.</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="produk-card">
+        <i class="fas fa-code"></i>
+        <h3>Edit & Fix Script</h3>
+        <p>Perbaikan atau edit script bot WhatsApp, web, panel, dan lainnya.</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+      <div class="produk-card">
+        <i class="fas fa-globe"></i>
+        <h3>Bikin Website</h3>
+        <p>Web portfolio, toko otomatis, tools, landing page, semua bisa dibuat!</p>
+        <a href="https://wa.me/6287717274346" class="btn">Pesan Sekarang</a>
+      </div>
+    </div>
+  </section>
 
-    <div class="divider"></div>
+  <footer>
+    &copy; <span id="year"></span> Fika Store | <a href="https://wa.me/6287717274346">Hubungi Kami</a>
+  </footer>
 
-    <section class="produk">
-        <h2>List Produk</h2>
-        <div class="produk-container">
-            <!-- Produk akan dimasukkan dari JavaScript -->
-        </div>
-    </section>
+  <script>
+  // Format tanggal + hari lokal
+  const today = new Date();
+  const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const bulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  document.getElementById("today-date").textContent =
+    `${hari[today.getDay()]}, ${today.getDate()}-${today.getMonth()+1}-${today.getFullYear()}`;
 
-    <div class="divider"></div>
+  // Battery info
+  navigator.getBattery().then(battery => {
+    function updateBatteryStatus() {
+      const level = Math.round(battery.level * 100) + "%";
+      document.getElementById("battery-status").textContent = level;
+    }
+    updateBatteryStatus();
+    battery.addEventListener("levelchange", updateBatteryStatus);
+  });
 
-    <footer>
-        <p>&copy; <span id="year"></span> Fika Store | <a href="https://wa.me/6287717274346">Hubungi Kami</a></p>
-    </footer>
+  // Region detection
+  const region = Intl.DateTimeFormat().resolvedOptions().locale;
+  document.getElementById("user-region").textContent = region;
+  
+  const words = ["dev", "programmer", "designer"];
+  let part = 0;
+  let i = 0;
+  let isDeleting = false;
+  const typingElement = document.getElementById("typing");
 
-    <script src="script.js"></script>
+  function typeEffect() {
+    let currentWord = words[part];
+    let typed = isDeleting 
+      ? currentWord.substring(0, i--) 
+      : currentWord.substring(0, i++);
+
+    typingElement.textContent = typed;
+
+    let speed = isDeleting ? 70 : 100;
+
+    if (!isDeleting && i === currentWord.length) {
+      speed = 1200;
+      isDeleting = true;
+    } else if (isDeleting && i === 0) {
+      isDeleting = false;
+      part = (part + 1) % words.length;
+      speed = 200;
+    }
+
+    setTimeout(typeEffect, speed);
+  }
+
+  typeEffect();
+ 
+    // year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
