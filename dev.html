@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fika Store | Digital Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff5f8;
+      margin: 0;
+      color: #4b4b4b;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ff8da5, #bfe9ff);
+      padding: 5rem 1rem 6rem;
+      text-align: center;
+      color: white;
+      border-bottom-left-radius: 60% 10%;
+      border-bottom-right-radius: 60% 10%;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: bounceIn 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: slideIn 1.5s ease;
+    }
+
+    .fika-ai-intro {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.1rem;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .button-tentang {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #ff6e7f;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .button-tentang:hover {
+      background: #ff92a8;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section-tentang,
+    .store-section,
+    .services-section {
+      padding: 3rem 2rem;
+      max-width: 960px;
+      margin: auto;
+      background: #fff;
+      margin-top: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 110, 127, 0.1);
+      animation: fadeInUp 1s ease;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6e7f;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-card, .service-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffeef2;
+      border-radius: 15px;
+      margin: 1rem 0;
+      padding: 1.5rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .product-card:hover,
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 142, 157, 0.2);
+    }
+
+    .product-card h3,
+    .service-card h3 {
+      margin: 0 0 0.5rem;
+    }
+
+    .product-card a,
+    .service-card a {
+      background: #ff6e7f;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .product-card a:hover,
+    .service-card a:hover {
+      background: #ffa3b3;
+    }
+
+    /* Keyframes */
+    @keyframes bounceIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Fika Store | デジタルマーケットプレイス</h1>
+    <p>すべてのデジタルニーズを一か所で！<br>Semua kebutuhan digital, lengkap dalam satu tempat!</p>
+  </div>
+
+  <div class="fika-ai-intro">
+    <p><strong>はぁ〜い〜〜！</strong><br>Hayyyiiiee my name's is <strong>Fika-Ai</strong>!<br>
+      Aku akan memberitahu kamu tentang <strong>Fika Store</strong>.</p>
+    <a class="button-tentang" href="#tentang">Tentang / About</a>
+  </div>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+   <section id="services" class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">List Jasa & Produk Kami</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Jasa Setup Server</h3>
+        <p class="text-gray-600 mb-4">Setup server Minecraft, Bot WhatsApp, dll. Full support & fast respon.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Nomor Kosong</h3>
+        <p class="text-gray-600 mb-4">Nokos WhatsApp premium & reguler, cocok buat daftar/daur ulang bot & akun.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">VPS & Hosting</h3>
+        <p class="text-gray-600 mb-4">VPS murah, stabil, cocok untuk bot, server game, maupun keperluan dev.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Script Bot WhatsApp</h3>
+        <p class="text-gray-600 mb-4">Script Bot WhatsApp full fitur, anti delay, bisa custom sesuai kebutuhan kamu.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Edit & Fix Script</h3>
+        <p class="text-gray-600 mb-4">Perbaikan atau edit script bot WhatsApp, web, panel, dan lainnya.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Bikin Website</h3>
+        <p class="text-gray-600 mb-4">Web portfolio, toko online, tools, landing page, semua bisa dibuat!</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Install Panel Pterodactyl</h3>
+        <p class="text-gray-600 mb-4">Jasa install panel Pterodactyl siap pakai, cocok buat manage bot, MC server, dan hosting lainnya.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Server Minecraft</h3>
+        <p class="text-gray-600 mb-4">Setup server Minecraft Java & Bedrock, lengkap dengan plugin, sistem VIP, dan anti lag.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Domain Murah</h3>
+        <p class="text-gray-600 mb-4">Dapatkan domain .com, .id, .xyz, dan lainnya dengan harga terjangkau dan proses cepat.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Digital Marketplace</h3>
+        <p class="text-gray-600 mb-4">Tempat terbaik untuk berbagai layanan digital: pulsa, saldo e-wallet, dan produk unik lainnya.</p>
+        <a href="#order" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section-tentang" id="tentang">
+    <h2>Fika Store | Digital Merketplace</h2>
+    <p><strong>Fika-Ai</strong> bukan sekadar penyedia jasa digital—kami adalah partner inovasimu. Dengan semangat pelayanan cepat, kualitas premium, dan dukungan penuh, kami hadir untuk membantumu membangun dan mengelola kebutuhan digital seperti server, bot, website, hingga layanan marketplace. Fokus kami adalah solusi praktis, modern, dan bisa disesuaikan dengan kebutuhan setiap klien. Apapun proyek digitalmu, kami siap jadi tim yang kamu butuhkan. Ingattt Yaaa!!
+    
+    <strong>"Setiap langkah kecil hari ini adalah pondasi besar untuk kesuksesan esok. Terus bergerak, terus belajar, karena di balik tantangan, selalu ada peluang."</strong></p>
+</section>
+
+  <div class="section-tentang" id="tentang">
+    <h2>Tentang Fika Store</h2>
+    <p><strong>Fika Store</strong> adalah platform digital yang menyediakan layanan lengkap mulai dari pulsa murah, VPS hosting,
+      jasa perbaikan script bot, hingga nomor kosong untuk verifikasi akun. Kami hadir untuk memberikan solusi digital terpercaya
+      dengan harga terbaik dan pelayanan cepat.</p>
+    <ul>
+      <li><strong>WhatsApp:</strong> https://wa.me/6287717274246</li>
+      <li><strong>Email:</strong> theboyscuyy@gmail.com</li>
+      <li><strong>Instagram:</strong> @fikastore</li>
+      <li><strong>Jam Operasional:</strong> Setiap Hari, 08.00 - 22.00 WIB</li>
+    </ul>
+  </div>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        animation: {
+          float: 'float 3s ease-in-out infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-5px)' },
+          },
+        },
+      },
+    },
+  };
+</script>
+</body>
+  </html>
